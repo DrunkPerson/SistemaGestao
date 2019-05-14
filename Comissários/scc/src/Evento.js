@@ -1,7 +1,8 @@
 import $ from "jquery";
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
-import TratadorErros from './TratadorErros'
+import TratadorErros from './TratadorErros';
+import DatePicker from 'react-datepicker';
 
 class FormularioEvento extends Component {
   constructor(props) {
@@ -56,13 +57,17 @@ class FormularioEvento extends Component {
   }
   
   render() {
-    var eventos = this.props.autores.map(function(evento){
+    var eventos = this.props.eventos.map(function(evento){
       return <option key={evento.id} value={evento.id}>{evento.nome}</option>;
     });
     return (
       <div>
         <form className="pure-form pure-form-aligned" onSubmit={this.handleLivroSubmit}>
-        {eventos}
+        <DatePicker
+            inline
+            selected={this.state.startDate}
+            onChange={this.handleChange}
+        />
         </form>             
       </div>
     );
