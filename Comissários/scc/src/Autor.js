@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import InputCustomizado from './componentes/InputCustomizado';
+import InputCustomizado from './components/InputCustomizado';
 import PubSub from 'pubsub-js';
 import TratadorErros from  './TratadorErros';
 
@@ -18,7 +18,7 @@ class FormularioAutor extends Component {
   enviaForm(evento){
     evento.preventDefault();    
     $.ajax({
-      url:'http://localhost:8080/api/autores',
+      url:'http://cdc-react.herokuapp.com/api/autores',
       contentType:'application/json',
       dataType:'json',
       type:'post',
@@ -108,7 +108,7 @@ export default class AutorBox extends Component {
 
   componentDidMount(){  
     $.ajax({
-        url:"http://localhost:8080/api/autores",
+        url:"http://cdc-react.herokuapp.com/api/autores",
         dataType: 'json',
         success:function(resposta){    
           this.setState({lista:resposta});

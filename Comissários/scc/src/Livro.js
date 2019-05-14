@@ -1,5 +1,5 @@
 import $ from "jquery";
-import InputCustomizado from "./componentes/InputCustomizado"
+import InputCustomizado from "./components/InputCustomizado"
 import React, { Component } from 'react';
 import PubSub from 'pubsub-js';
 import TratadorErros from './TratadorErros'
